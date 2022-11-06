@@ -19,6 +19,8 @@
 		B13B010329182668006771F3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13B010229182668006771F3 /* APIService.swift */; };
 		B13B0105291827FC006771F3 /* TotalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13B0104291827FC006771F3 /* TotalData.swift */; };
 		B13B0107291828CA006771F3 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13B0106291828CA006771F3 /* CustomError.swift */; };
+		B13B010929182F62006771F3 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13B010829182F62006771F3 /* Region.swift */; };
+		B13B010B291831DC006771F3 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13B010A291831DC006771F3 /* Report.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		B13B010229182668006771F3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B13B0104291827FC006771F3 /* TotalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalData.swift; sourceTree = "<group>"; };
 		B13B0106291828CA006771F3 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		B13B010829182F62006771F3 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		B13B010A291831DC006771F3 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +114,9 @@
 				B13B00DC29182644006771F3 /* Persistence.swift */,
 				B13B00DE29182644006771F3 /* CovidStats.xcdatamodeld */,
 				B13B00D929182644006771F3 /* Preview Content */,
-				B13B010229182668006771F3 /* APIService.swift */,
-				B13B0104291827FC006771F3 /* TotalData.swift */,
-				B13B0106291828CA006771F3 /* CustomError.swift */,
+				B13B010D29183591006771F3 /* Networking */,
+				B13B010C2918357C006771F3 /* Errors */,
+				B13B010E291835A0006771F3 /* Model */,
 			);
 			path = CovidStats;
 			sourceTree = "<group>";
@@ -140,6 +144,32 @@
 				B13B00F529182644006771F3 /* CovidStatsUITestsLaunchTests.swift */,
 			);
 			path = CovidStatsUITests;
+			sourceTree = "<group>";
+		};
+		B13B010C2918357C006771F3 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				B13B0106291828CA006771F3 /* CustomError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		B13B010D29183591006771F3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B13B010229182668006771F3 /* APIService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B13B010E291835A0006771F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B13B010829182F62006771F3 /* Region.swift */,
+				B13B010A291831DC006771F3 /* Report.swift */,
+				B13B0104291827FC006771F3 /* TotalData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +305,9 @@
 				B13B0107291828CA006771F3 /* CustomError.swift in Sources */,
 				B13B00DD29182644006771F3 /* Persistence.swift in Sources */,
 				B13B010329182668006771F3 /* APIService.swift in Sources */,
+				B13B010929182F62006771F3 /* Region.swift in Sources */,
 				B13B00D629182643006771F3 /* ContentView.swift in Sources */,
+				B13B010B291831DC006771F3 /* Report.swift in Sources */,
 				B13B00D429182643006771F3 /* CovidStatsApp.swift in Sources */,
 				B13B0105291827FC006771F3 /* TotalData.swift in Sources */,
 				B13B00E029182644006771F3 /* CovidStats.xcdatamodeld in Sources */,
