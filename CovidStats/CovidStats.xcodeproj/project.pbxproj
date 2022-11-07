@@ -26,6 +26,8 @@
 		B13B011729183F10006771F3 /* DataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13B011629183F10006771F3 /* DataCardView.swift */; };
 		B13B011929184288006771F3 /* Extension+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13B011829184288006771F3 /* Extension+Int.swift */; };
 		B1451D1C2919595A005153EA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1451D1B2919595A005153EA /* SearchBarView.swift */; };
+		B1451D1E29195CB7005153EA /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1451D1D29195CB7005153EA /* CountryDetailView.swift */; };
+		B1451D2029195D0E005153EA /* CountryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1451D1F29195D0E005153EA /* CountryDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		B13B011629183F10006771F3 /* DataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCardView.swift; sourceTree = "<group>"; };
 		B13B011829184288006771F3 /* Extension+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Int.swift"; sourceTree = "<group>"; };
 		B1451D1B2919595A005153EA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		B1451D1D29195CB7005153EA /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
+		B1451D1F29195D0E005153EA /* CountryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				B13B010F29183757006771F3 /* MainViewModel.swift */,
+				B1451D1F29195D0E005153EA /* CountryDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				B13B011429183EE5006771F3 /* TotalDataView.swift */,
 				B13B011629183F10006771F3 /* DataCardView.swift */,
 				B1451D1B2919595A005153EA /* SearchBarView.swift */,
+				B1451D1D29195CB7005153EA /* CountryDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,6 +356,8 @@
 				B13B010B291831DC006771F3 /* Report.swift in Sources */,
 				B13B011929184288006771F3 /* Extension+Int.swift in Sources */,
 				B13B00D429182643006771F3 /* CovidStatsApp.swift in Sources */,
+				B1451D1E29195CB7005153EA /* CountryDetailView.swift in Sources */,
+				B1451D2029195D0E005153EA /* CountryDetailViewModel.swift in Sources */,
 				B13B011729183F10006771F3 /* DataCardView.swift in Sources */,
 				B1451D1C2919595A005153EA /* SearchBarView.swift in Sources */,
 				B13B0105291827FC006771F3 /* TotalData.swift in Sources */,
