@@ -30,6 +30,10 @@ struct MainView: View {
                     
                     TotalDataView(totalData: viewModel.totalData)
                     
+                    if viewModel.isSearchVisible {
+                        SearchBarView(serarchText: $viewModel.searchText)
+                    }
+                    
                     Text("All countries")
                         .font(.title2.bold())
                         .foregroundColor(.white)
@@ -37,9 +41,12 @@ struct MainView: View {
                     
                     List {
                         Section {
-                            ForEach(viewModel.allContries, id: \.iso) { country in
+                            ForEach(viewModel.allContries.filter {
+                                viewModel.searchText.isEmpty ? true : $0.name.lowercased().contains(viewModel.searchText.lowercased())
+                            }, id: \.iso) { country in
                                 
-                                NavigationLink(destination: Text("hello")) {
+                                NavigationLink(destination:
+                                    Text("hello")) {
                                     Text(country.name)
                                 }
                                 

@@ -25,6 +25,7 @@
 		B13B011529183EE5006771F3 /* TotalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13B011429183EE5006771F3 /* TotalDataView.swift */; };
 		B13B011729183F10006771F3 /* DataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13B011629183F10006771F3 /* DataCardView.swift */; };
 		B13B011929184288006771F3 /* Extension+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13B011829184288006771F3 /* Extension+Int.swift */; };
+		B1451D1C2919595A005153EA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1451D1B2919595A005153EA /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		B13B011429183EE5006771F3 /* TotalDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalDataView.swift; sourceTree = "<group>"; };
 		B13B011629183F10006771F3 /* DataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCardView.swift; sourceTree = "<group>"; };
 		B13B011829184288006771F3 /* Extension+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Int.swift"; sourceTree = "<group>"; };
+		B1451D1B2919595A005153EA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +128,8 @@
 				B13B010C2918357C006771F3 /* Errors */,
 				B13B010E291835A0006771F3 /* Model */,
 				B13B011129183785006771F3 /* ViewModel */,
-				B13B011429183EE5006771F3 /* TotalDataView.swift */,
-				B13B011629183F10006771F3 /* DataCardView.swift */,
-				B13B011829184288006771F3 /* Extension+Int.swift */,
+				B1451D1A29195939005153EA /* Views */,
+				B1451D1929195920005153EA /* Extension */,
 			);
 			path = CovidStats;
 			sourceTree = "<group>";
@@ -190,6 +191,24 @@
 				B13B010F29183757006771F3 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B1451D1929195920005153EA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B13B011829184288006771F3 /* Extension+Int.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B1451D1A29195939005153EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B13B011429183EE5006771F3 /* TotalDataView.swift */,
+				B13B011629183F10006771F3 /* DataCardView.swift */,
+				B1451D1B2919595A005153EA /* SearchBarView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +351,7 @@
 				B13B011929184288006771F3 /* Extension+Int.swift in Sources */,
 				B13B00D429182643006771F3 /* CovidStatsApp.swift in Sources */,
 				B13B011729183F10006771F3 /* DataCardView.swift in Sources */,
+				B1451D1C2919595A005153EA /* SearchBarView.swift in Sources */,
 				B13B0105291827FC006771F3 /* TotalData.swift in Sources */,
 				B13B011529183EE5006771F3 /* TotalDataView.swift in Sources */,
 				B13B00E029182644006771F3 /* CovidStats.xcdatamodeld in Sources */,
