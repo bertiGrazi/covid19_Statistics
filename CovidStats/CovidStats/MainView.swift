@@ -29,9 +29,40 @@ struct MainView: View {
                         .padding(10)
                     
                     TotalDataView(totalData: viewModel.totalData)
+                    
+                    Text("All countries")
+                        .font(.title2.bold())
+                        .foregroundColor(.white)
+                        .padding(10)
+                    
+                    List {
+                        Section {
+                            ForEach(viewModel.allContries, id: \.iso) { country in
+                                
+                                NavigationLink(destination: Text("hello")) {
+                                    Text(country.name)
+                                }
+                                
+                            }
+                        }
+                    }
+                    .listStyle(.plain)
                 }
             }
+            .navigationTitle("Statistics")
+            .toolbar {
+                Button {
+                    viewModel.isSearchVisible.toggle()
+                    if !viewModel.isSearchVisible {
+                        viewModel.searchText = ""
+                    }
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                }
+            }
+            .tint(.white)
         }
+        .accentColor(.white)
     }
 }
 
