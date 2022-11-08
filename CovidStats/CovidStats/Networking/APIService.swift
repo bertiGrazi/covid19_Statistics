@@ -113,7 +113,7 @@ final class APIService {
             
         }
         
-        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 0.0)
 
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers

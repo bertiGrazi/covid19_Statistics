@@ -25,6 +25,8 @@ struct RegionReport: Codable, Identifiable {
         date.formatted(date: .abbreviated, time: .omitted)
     }
     
+    static let dummyData = RegionReport(date: Date.now, confirmed: 0, deaths: 0, active: 0, fatality_rate: 0.0, region: RegionDetail(name: "N/A", province: "province"))
+    
 }
 
 struct RegionDetail: Codable {

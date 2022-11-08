@@ -10,7 +10,8 @@ import CoreData
 
 struct MainView: View {
     
-    @ObservedObject private var viewModel = MainViewModel()
+    /// create the initial instance of an observable object
+    @StateObject private var viewModel = MainViewModel()
     
     var body: some View {
         NavigationView {
@@ -29,9 +30,47 @@ struct MainView: View {
                         .padding(10)
                     
                     TotalDataView(totalData: viewModel.totalData)
+                    
+                    if viewModel.isSearchVisible {
+                        SearchBarView(serarchText: $viewModel.searchText)
+                    }
+                    
+                    Text("All countries")
+                        .font(.title2.bold())
+                        .foregroundColor(.white)
+                        .padding(10)
+                    
+                    List {
+                        Section {
+                            ForEach(viewModel.allContries.filter {
+                                viewModel.searchText.isEmpty ? true : $0.name.lowercased().contains(viewModel.searchText.lowercased())
+                            }, id: \.iso) { country in
+                                
+                                NavigationLink(destination:
+                                    CountryDetailView(viewModel: CountryDetailViewModel(country: country))) {
+                                    Text(country.name)
+                                }
+                                
+                            }
+                        }
+                    }
+                    .listStyle(.plain)
                 }
             }
+            .navigationTitle("Statistics")
+            .toolbar {
+                Button {
+                    viewModel.isSearchVisible.toggle()
+                    if !viewModel.isSearchVisible {
+                        viewModel.searchText = ""
+                    }
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                }
+            }
+            .tint(.white)
         }
+        .accentColor(.primary)
     }
 }
 
