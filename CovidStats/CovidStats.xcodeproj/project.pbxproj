@@ -29,6 +29,7 @@
 		B1451D1E29195CB7005153EA /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1451D1D29195CB7005153EA /* CountryDetailView.swift */; };
 		B1451D2029195D0E005153EA /* CountryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1451D1F29195D0E005153EA /* CountryDetailViewModel.swift */; };
 		B1451D22291A7818005153EA /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1451D21291A7818005153EA /* ReportView.swift */; };
+		B1451D24291A857A005153EA /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1451D23291A857A005153EA /* LocalFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		B1451D1D29195CB7005153EA /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
 		B1451D1F29195D0E005153EA /* CountryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewModel.swift; sourceTree = "<group>"; };
 		B1451D21291A7818005153EA /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		B1451D23291A857A005153EA /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				B13B010229182668006771F3 /* APIService.swift */,
+				B1451D23291A857A005153EA /* LocalFileManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				B13B011929184288006771F3 /* Extension+Int.swift in Sources */,
 				B13B00D429182643006771F3 /* CovidStatsApp.swift in Sources */,
 				B1451D1E29195CB7005153EA /* CountryDetailView.swift in Sources */,
+				B1451D24291A857A005153EA /* LocalFileManager.swift in Sources */,
 				B1451D2029195D0E005153EA /* CountryDetailViewModel.swift in Sources */,
 				B13B011729183F10006771F3 /* DataCardView.swift in Sources */,
 				B1451D1C2919595A005153EA /* SearchBarView.swift in Sources */,
