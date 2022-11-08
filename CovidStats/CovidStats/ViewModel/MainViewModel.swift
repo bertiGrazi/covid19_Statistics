@@ -14,6 +14,7 @@ final class MainViewModel: ObservableObject {
     @Published var allContries: [Country] = []
     @Published var searchText = ""
     @Published var isSearchVisible = false
+    @Published var alertItem: AlertItem?
     
     init() {
         fetchTotalData()
@@ -30,6 +31,7 @@ final class MainViewModel: ObservableObject {
                 case .failure(_):
                     print("error total data")
                     //TODO: create an alert item
+                    self.alertItem = AlertContext.unableToFetchTotalStats
                 }
             }
         }
@@ -46,7 +48,7 @@ final class MainViewModel: ObservableObject {
                     self.allContries = allContries.sorted(by: {$0.name < $1.name })
                 case .failure(_):
                     print("error total data")
-                    //TODO: create an alert item
+                    self.alertItem = AlertContext.unableToFetchCountries
                 }
             }
         }
