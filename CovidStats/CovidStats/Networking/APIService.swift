@@ -21,7 +21,7 @@ final class APIService {
     private let baseURLString = "https://covid-19-statistics.p.rapidapi.com"
     
     func fetchTotalData(completion: @escaping((Result<TotalData, Error>) -> Void)) {
-
+        
         let totalURLString = baseURLString + "/reports/total"
         
         let url = URL(string: totalURLString)
@@ -32,10 +32,10 @@ final class APIService {
         }
         
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-
+        
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
-
+        
         let session = URLSession.shared
         
         let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
@@ -43,9 +43,9 @@ final class APIService {
             if (error != nil) {
                 completion(.failure(CovidError.noDataReceived))
             } else {
-//                if let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
-//                    print(json)
-//                }
+                //                if let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
+                //                    print(json)
+                //                }
                 
                 let decoder = JSONDecoder()
                 
@@ -57,12 +57,28 @@ final class APIService {
                 }
             }
         })
-
+        
         dataTask.resume()
     }
     
     func fetchAllRegions(completion: @escaping((Result<[Country], Error>) -> Void)) {
-
+        
+        let decoder = JSONDecoder()
+        
+        // check if local data is available
+        if let data = LocalFileManager.shared.fetchLocalCountries() {
+            do {
+                print("return local data")
+                let allCountries = try decoder.decode(AllRegions.self, from: data)
+                completion(.success(allCountries.data))
+            } catch {
+                completion(.failure(error))
+            }
+            
+            return
+        }
+        
+        
         let countriesURLString = baseURLString + "/regions"
         
         let url = URL(string: countriesURLString)
@@ -73,10 +89,10 @@ final class APIService {
         }
         
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-
+        
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
-
+        
         let session = URLSession.shared
         
         let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
@@ -84,13 +100,12 @@ final class APIService {
             if (error != nil) {
                 completion(.failure(CovidError.noDataReceived))
             } else {
-//                if let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
-//                    print(json)
-//                }
-//
-                let decoder = JSONDecoder()
-
+                
+                //save locally
+                LocalFileManager.shared.saveCountriesLocally(countryData: data)
+                
                 do {
+                    print("return local API")
                     let allCountries = try decoder.decode(AllRegions.self, from: data!)
                     completion(.success(allCountries.data))
                 } catch {
@@ -98,12 +113,12 @@ final class APIService {
                 }
             }
         })
-
+        
         dataTask.resume()
     }
     
     func fetchReport(for iso: String, completion: @escaping((Result<[RegionReport], Error>) -> Void)) {
-
+        
         let reportsURLString = baseURLString + "/reports?iso=\(iso)"
         
         let url = URL(string: reportsURLString )
@@ -114,10 +129,10 @@ final class APIService {
         }
         
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 0.0)
-
+        
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
-
+        
         let session = URLSession.shared
         
         let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
@@ -125,17 +140,17 @@ final class APIService {
             if (error != nil) {
                 completion(.failure(CovidError.noDataReceived))
             } else {
-//                if let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
-//                    print(json)
-//                }
-
+                //                if let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
+                //                    print(json)
+                //                }
+                
                 let decoder = JSONDecoder()
                 
                 let formatter = DateFormatter()
                 /// At API: date:"2022-11-05"
                 formatter.dateFormat = "y-MM-dd"
                 decoder.dateDecodingStrategy = .formatted(formatter)
-
+                
                 do {
                     let allReports = try decoder.decode(AllReports.self, from: data!)
                     completion(.success(allReports.data))
@@ -144,7 +159,7 @@ final class APIService {
                 }
             }
         })
-
+        
         dataTask.resume()
     }
 }
