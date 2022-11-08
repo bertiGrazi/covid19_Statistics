@@ -9,13 +9,34 @@ import SwiftUI
 
 struct CountryDetailView: View {
     
+    /// @ObservedObject property wrapper is used inside a view to store an observable object instance
+    /// It is really important that you use @ObservedObject only with views that were passed in from elsewhere
+    @ObservedObject var viewModel: CountryDetailViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if viewModel.reports.count > 1 {
+                //show list os states
+                List {
+                    ForEach(viewModel.reports) { report in
+                        NavigationLink(destination: Text("hello")) {
+                            Text(report.region.province)
+                        }
+                        
+                    }
+                }
+                .listStyle(.plain)
+                .navigationTitle(viewModel.reports.first?.region.name ?? "Unkown country")
+                .navigationBarTitleDisplayMode(.inline)
+            } else {
+                // show report view
+            }
+        }
     }
 }
 
 struct CountryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryDetailView()
+        CountryDetailView(viewModel: CountryDetailViewModel.init(country: Country.dummyData))
     }
 }

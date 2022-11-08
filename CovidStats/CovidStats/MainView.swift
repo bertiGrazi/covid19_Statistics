@@ -10,7 +10,8 @@ import CoreData
 
 struct MainView: View {
     
-    @ObservedObject private var viewModel = MainViewModel()
+    /// create the initial instance of an observable object
+    @StateObject private var viewModel = MainViewModel()
     
     var body: some View {
         NavigationView {
