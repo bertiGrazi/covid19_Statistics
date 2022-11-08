@@ -11,6 +11,7 @@ final class CountryDetailViewModel: ObservableObject {
 
     /// @Published is one of the most useful property wrappers in SwiftUI, allowing us to create observable objects that automatically announce when changes occur.
     @Published var reports: [RegionReport] = []
+    @Published var alertItem: AlertItem?
     
     private var iso: String
     
@@ -26,7 +27,7 @@ final class CountryDetailViewModel: ObservableObject {
                     self.reports = reports
                 case .failure(_):
                     print("error getting country report")
-                    // TODO: Show Alert
+                    self.alertItem = AlertContext.unableToFetchTotalStats
                 }
             }
         }

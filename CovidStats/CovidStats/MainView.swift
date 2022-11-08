@@ -58,6 +58,9 @@ struct MainView: View {
                 }
             }
             .navigationTitle("Statistics")
+            .alert(item: $viewModel.alertItem, content: { alertItem in
+                Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
+            })
             .toolbar {
                 Button {
                     viewModel.isSearchVisible.toggle()

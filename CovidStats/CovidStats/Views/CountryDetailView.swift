@@ -33,6 +33,9 @@ struct CountryDetailView: View {
                     .ignoresSafeArea()
             }
         }
+        .alert(item: $viewModel.alertItem, content: { alertItem in
+            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
+        })
         .onAppear {
             if viewModel.reports.count == 0 {
                 viewModel.fetchReport()
