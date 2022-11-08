@@ -19,7 +19,7 @@ struct CountryDetailView: View {
                 //show list os states
                 List {
                     ForEach(viewModel.reports) { report in
-                        NavigationLink(destination: Text("hello")) {
+                        NavigationLink(destination: ReportView(report: report)) {
                             Text(report.region.province)
                         }
                         
@@ -29,7 +29,13 @@ struct CountryDetailView: View {
                 .navigationTitle(viewModel.reports.first?.region.name ?? "Unkown country")
                 .navigationBarTitleDisplayMode(.inline)
             } else {
-                // show report view
+                ReportView(report: viewModel.reports.first ?? RegionReport.dummyData)
+                    .ignoresSafeArea()
+            }
+        }
+        .onAppear {
+            if viewModel.reports.count == 0 {
+                viewModel.fetchReport()
             }
         }
     }

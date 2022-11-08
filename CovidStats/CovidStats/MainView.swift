@@ -47,7 +47,7 @@ struct MainView: View {
                             }, id: \.iso) { country in
                                 
                                 NavigationLink(destination:
-                                    Text("hello")) {
+                                    CountryDetailView(viewModel: CountryDetailViewModel(country: country))) {
                                     Text(country.name)
                                 }
                                 
@@ -70,7 +70,7 @@ struct MainView: View {
             }
             .tint(.white)
         }
-        .accentColor(.white)
+        .accentColor(.primary)
     }
 }
 
